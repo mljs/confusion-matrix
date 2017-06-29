@@ -52,8 +52,8 @@ class ConfusionMatrix {
         }
 
         for (let i = 0; i < predicted.length; i++) {
-            const actualIdx = distinctLabels.findIndex(label => label === actual[i]);
-            const predictedIdx = distinctLabels.findIndex(label => label === predicted[i]);
+            const actualIdx = distinctLabels.indexOf(actual[i]);
+            const predictedIdx = distinctLabels.indexOf(predicted[i]);
             if (actualIdx >= 0 && predictedIdx >= 0) {
                 matrix[actualIdx][predictedIdx]++;
             }
@@ -100,8 +100,8 @@ class ConfusionMatrix {
      * @return {number} - The element in the confusion matrix
      */
     getCount(actual, predicted) {
-        const actualIndex = this.labels.findIndex(label => label === actual);
-        const predictedIndex = this.labels.findIndex(label => label === predicted);
+        const actualIndex = this.labels.indexOf(actual);
+        const predictedIndex = this.labels.indexOf(predicted);
         if (actualIndex < 0 || predictedIndex < 0) {
             throw new Error('The provided label does not exist');
         }
