@@ -13,10 +13,20 @@ Confusion matrix for supervised classification.
 ## Usage
 
 ```js
-import library from 'ml-confusion-matrix';
+import ConfusionMatrix from 'ml-confusion-matrix';
 
-const result = library(args);
-// result is ...
+const CM1 = new ConfusionMatrix([[13, 2], [10, 5]], ['cat', 'dog']);
+
+// Construct the confusion matrix from the true and the predicted labels
+const trueLabels =      [0, 1, 0, 1, 1, 0];
+const predictedLabels = [1, 1, 1, 1, 0, 0];
+const CM2 = new ConfusionMatrix.fromLabels(trueLabels, predictedLabels);
+
+// Compute some derivatives of the confusion matrix
+// See API documentation for the complete list
+console.log(CM1.accuracy); // 0.6 # (13 + 5) / 30
+console.log(CM2.accuracy); // 0.5
+console.log(CM2.count);    // 6
 ```
 
 ## [API Documentation](https://mljs.github.io/confusion-matrix/)

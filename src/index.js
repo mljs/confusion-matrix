@@ -2,7 +2,7 @@
  *  Constructs a confusion matrix
  * @class ConfusionMatrix
  * @example
- * const CM = new ConfusionMatrix([[13, 2], [10, 5], ['cat', 'dog'])
+ * const CM = new ConfusionMatrix([[13, 2], [10, 5]], ['cat', 'dog'])
  * @param {Array<Array<number>>} matrix - The confusion matrix, a 2D Array. Rows represent the actual label and columns the
  *     predicted label.
  * @param {Array<any>} labels - Labels of the confusion matrix, a 1D Array
