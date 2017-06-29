@@ -21,14 +21,14 @@ describe('Confusion Matrix', function () {
     it('diagonal', function () {
         const CM = new ConfusionMatrix(diagonal.matrix, diagonal.labels);
         expect(CM.accuracy).toBe(1);
-        expect(CM.nbPredicted).toBe(6);
+        expect(CM.total).toBe(6);
         expect(CM.getCount(1, 0)).toBe(0);
     });
 
     it('full', function () {
         const CM = new ConfusionMatrix(full.matrix, full.labels);
         expect(CM.accuracy).toBe(10 / 15);
-        expect(CM.nbPredicted).toBe(15);
+        expect(CM.total).toBe(15);
         expect(CM.getCount(1, 0)).toBe(1);
     });
 

@@ -26,7 +26,7 @@ const CM2 = new ConfusionMatrix.fromLabels(trueLabels, predictedLabels);
 // See API documentation for the complete list
 console.log(CM1.accuracy); // 0.6 # (13 + 5) / 30
 console.log(CM2.accuracy); // 0.5
-console.log(CM2.count);    // 6
+console.log(CM2.total);    // 6
 ```
 
 ## [API Documentation](https://mljs.github.io/confusion-matrix/)

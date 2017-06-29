@@ -83,7 +83,7 @@ class ConfusionMatrix {
      * Compute the number of predicted observations
      * @return {number} - The number of predicted observations
      */
-    get nbPredicted() {
+    get total() {
         var predicted = 0;
         for (var i = 0; i < this.matrix.length; i++) {
             for (var j = 0; j < this.matrix.length; j++) {
