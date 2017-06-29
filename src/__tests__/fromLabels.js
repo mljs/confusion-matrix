@@ -28,4 +28,10 @@ describe('fromLabels', function () {
         expect(CM.labels).toEqual([1, 2, 3]);
         expect(CM.matrix).toEqual([[1, 0, 0], [1, 0, 0], [1, 0, 0]]);
     });
+
+    it('should throw if actual and predicted are not of same length', function () {
+        expect(() => {
+            ConfusionMatrix.fromLabels([1, 2], [1, 2, 3]);
+        }).toThrow(/must have the same length/);
+    });
 });
