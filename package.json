@@ -1,0 +1,43 @@
+{
+  "name": "ml-confusion-matrix",
+  "version": "0.0.0",
+  "description": "Confusion matrix for supervised classification",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "eslint": "eslint src",
+    "eslint-fix": "npm run eslint -- --fix",
+    "prepublish": "rollup -c",
+    "test": "run-s testonly eslint",
+    "test-travis": "eslint src && jest --coverage && codecov",
+    "testonly": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mljs/confusion-matrix.git"
+  },
+  "keywords": [],
+  "author": "Daniel Kostro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mljs/confusion-matrix/issues"
+  },
+  "homepage": "https://github.com/mljs/confusion-matrix#readme",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "codecov": "^2.2.0",
+    "eslint": "^4.1.1",
+    "eslint-config-cheminfo": "^1.8.0",
+    "eslint-plugin-no-only-tests": "^2.0.0",
+    "jest": "^20.0.4",
+    "npm-run-all": "^4.0.2",
+    "rollup": "^0.43.0"
+  }
+}
