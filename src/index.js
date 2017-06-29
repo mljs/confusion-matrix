@@ -1,13 +1,13 @@
 /**
- * ConfusionMatrix class
+ *  Constructs a confusion matrix
+ * @class ConfusionMatrix
+ * @example
+ * const CM = new ConfusionMatrix([[13, 2], [10, 5], ['cat', 'dog'])
+ * @param {Array<Array<number>>} matrix - The confusion matrix, a 2D Array. Rows represent the actual label and columns the
+ *     predicted label.
+ * @param {Array<any>} labels - Labels of the confusion matrix, a 1D Array
  */
 class ConfusionMatrix {
-    /**
-     * Constructor
-     * @param {Array} matrix - The confusion matrix, a 2D Array. Rows represent the actual label and columns the
-     *     predicted label. TODO: provide example
-     * @param {Array} labels - Labels of the confusion matrix, a 1D Array
-     */
     constructor(matrix, labels) {
         if (matrix.length !== matrix[0].length) {
             throw new Error('Confusion matrix must be square');
@@ -17,16 +17,15 @@ class ConfusionMatrix {
         }
         this.labels = labels;
         this.matrix = matrix;
-
     }
 
 
     /**
      * Construct confusion matrix from the predicted and actual labels (classes)
-     * @param {Array} actual  - The predicted labels of the classification
-     * @param {Array} predicted     - The actual labels of the classification. Has to be of same length as predicted.
+     * @param {Array<any>} actual  - The predicted labels of the classification
+     * @param {Array<any>} predicted     - The actual labels of the classification. Has to be of same length as predicted.
      * @param {object} [options] - Additional options
-     * @param {Array} [options.labels] - The list of labels that should be used. If not provided the distinct set of
+     * @param {Array<any>} [options.labels] - The list of labels that should be used. If not provided the distinct set of
      *     labels present in predicted and actual is used. Labels are compared using the strict equality operator '==='
      * @return {ConfusionMatrix} - Confusion matrix
      */
@@ -95,9 +94,10 @@ class ConfusionMatrix {
     }
 
     /**
-     *
-     * @param actual
-     * @param predicted
+     * Returns the element in the confusion matrix that corresponds to the given actual and predicted labels.
+     * @param {any} actual - The true label
+     * @param {any} predicted - The predicted label
+     * @return {number} - The element in the confusion matrix
      */
     getCount(actual, predicted) {
         const actualIndex = this.labels.findIndex(label => label === actual);

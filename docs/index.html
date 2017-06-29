@@ -49,12 +49,6 @@
                       <li class='h5'><span>Instance members</span></li>
                       
                       <li><a
-                        href='#ConfusionMatrix#constructor'
-                        class='regular pre-open'>
-                        #constructor
-                      </a></li>
-                      
-                      <li><a
                         href='#ConfusionMatrix#accuracy'
                         class='regular pre-open'>
                         #accuracy
@@ -64,6 +58,12 @@
                         href='#ConfusionMatrix#nbPredicted'
                         class='regular pre-open'>
                         #nbPredicted
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getCount'
+                        class='regular pre-open'>
+                        #getCount
                       </a></li>
                       
                     </ul>
@@ -94,17 +94,17 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/5f9a5f6ee30b9a40850fa9b27da82198f4fd6a3e/lib/index.js#L6-L97'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/df29aec3b027f2ebdc8ad7cc39f1dd769a044f06/lib/index.js#L12-L112'>
       <span>lib/index.js</span>
       </a>
     
   </div>
   
 
-  <p>ConfusionMatrix class</p>
+  <p>Constructs a confusion matrix</p>
 
 
-  <div class='pre p1 fill-light mt0'>new ConfusionMatrix(matrix: any, labels: any)</div>
+  <div class='pre p1 fill-light mt0'>new ConfusionMatrix(matrix: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>>, labels: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>)</div>
   
   
 
@@ -121,16 +121,19 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>matrix</span> <code class='quiet'>(any)</code>
-	    
+            <span class='code bold'>matrix</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>>)</code>
+	    The confusion matrix, a 2D Array. Rows represent the actual label and columns the
+predicted label.
+
           </div>
           
         </div>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>labels</span> <code class='quiet'>(any)</code>
-	    
+            <span class='code bold'>labels</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>)</code>
+	    Labels of the confusion matrix, a 1D Array
+
           </div>
           
         </div>
@@ -144,6 +147,12 @@
 
   
 
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> CM = <span class="hljs-keyword">new</span> ConfusionMatrix([[<span class="hljs-number">13</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">10</span>, <span class="hljs-number">5</span>], [<span class="hljs-string">'cat'</span>, <span class="hljs-string">'dog'</span>])</pre>
+    
   
 
   
@@ -164,7 +173,7 @@
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/5f9a5f6ee30b9a40850fa9b27da82198f4fd6a3e/lib/index.js#L35-L66'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/df29aec3b027f2ebdc8ad7cc39f1dd769a044f06/lib/index.js#L34-L65'>
       <span>lib/index.js</span>
       </a>
     
@@ -174,7 +183,7 @@
   <p>Construct confusion matrix from the predicted and actual labels (classes)</p>
 
 
-  <div class='pre p1 fill-light mt0'>fromLabels(actual: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>, predicted: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>, options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>?): <a href="#confusionmatrix">ConfusionMatrix</a></div>
+  <div class='pre p1 fill-light mt0'>fromLabels(actual: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>, predicted: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>, options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>?): <a href="#confusionmatrix">ConfusionMatrix</a></div>
   
   
 
@@ -191,7 +200,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>actual</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+            <span class='code bold'>actual</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>)</code>
 	    The predicted labels of the classification
 
           </div>
@@ -200,7 +209,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>predicted</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
+            <span class='code bold'>predicted</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>)</code>
 	    The actual labels of the classification. Has to be of same length as predicted.
 
           </div>
@@ -229,7 +238,7 @@
             <tbody class='mt1'>
               
                 <tr>
-                  <td class='break-word'><span class='code bold'>options.labels</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>?</code>
+                  <td class='break-word'><span class='code bold'>options.labels</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>?</code>
                   </td>
                   <td class='break-word'><span>The list of labels that should be used. If not provided the distinct set of
 labels present in predicted and actual is used. Labels are compared using the strict equality operator '==='
@@ -278,85 +287,6 @@ labels present in predicted and actual is used. Labels are compared using the st
     <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class="clearfix">
   
-    <div class='border-bottom' id='ConfusionMatrix#constructor'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>constructor(matrix, labels)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/5f9a5f6ee30b9a40850fa9b27da82198f4fd6a3e/lib/index.js#L13-L23'>
-      <span>lib/index.js</span>
-      </a>
-    
-  </div>
-  
-
-  <p>Constructor</p>
-
-
-  <div class='pre p1 fill-light mt0'>constructor(matrix: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>, labels: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>matrix</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    The confusion matrix, a 2D Array. Rows represent the actual label and columns the
-predicted label. TODO: provide example
-
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>labels</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    Labels of the confusion matrix, a 1D Array
-
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
     <div class='border-bottom' id='ConfusionMatrix#accuracy'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
@@ -371,7 +301,7 @@ predicted label. TODO: provide example
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/5f9a5f6ee30b9a40850fa9b27da82198f4fd6a3e/lib/index.js#L72-L82'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/df29aec3b027f2ebdc8ad7cc39f1dd769a044f06/lib/index.js#L71-L82'>
       <span>lib/index.js</span>
       </a>
     
@@ -437,7 +367,7 @@ predicted label. TODO: provide example
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/5f9a5f6ee30b9a40850fa9b27da82198f4fd6a3e/lib/index.js#L88-L96'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/df29aec3b027f2ebdc8ad7cc39f1dd769a044f06/lib/index.js#L88-L96'>
       <span>lib/index.js</span>
       </a>
     
@@ -467,6 +397,92 @@ predicted label. TODO: provide example
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
         The number of predicted observations
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getCount'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getCount(actual, predicted)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/df29aec3b027f2ebdc8ad7cc39f1dd769a044f06/lib/index.js#L104-L111'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Returns the element in the confusion matrix that corresponds to the given actual and predicted labels.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getCount(actual: any, predicted: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>actual</span> <code class='quiet'>(any)</code>
+	    The true label
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>predicted</span> <code class='quiet'>(any)</code>
+	    The predicted label
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        The element in the confusion matrix
 
       
     
