@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * ConfusionMatrix class
  */
@@ -70,7 +68,8 @@ class ConfusionMatrix {
      * @return {number} - The prediction accuracy ([0-1]
      */
     get accuracy() {
-        var correct = 0, incorrect = 0;
+        let correct = 0;
+        let incorrect = 0;
         for (var i = 0; i < this.matrix.length; i++) {
             for (var j = 0; j < this.matrix.length; j++) {
                 if (i === j) correct += this.matrix[i][j];

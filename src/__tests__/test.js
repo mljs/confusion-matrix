@@ -43,5 +43,3 @@ describe('Confusion Matrix', function () {
     });
 });
 
-
-
