@@ -41,8 +41,7 @@ describe('Confusion Matrix', function () {
             new ConfusionMatrix([[1, 2]], []);
         }).toThrowError(/matrix must be square/);
     });
-
-
 });
+
 
 
