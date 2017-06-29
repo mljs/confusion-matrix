@@ -22,12 +22,14 @@ describe('Confusion Matrix', function () {
         const CM = new ConfusionMatrix(diagonal.matrix, diagonal.labels);
         expect(CM.accuracy).toBe(1);
         expect(CM.nbPredicted).toBe(6);
+        expect(CM.getCount(1, 0)).toBe(0);
     });
 
     it('full', function () {
         const CM = new ConfusionMatrix(full.matrix, full.labels);
         expect(CM.accuracy).toBe(10 / 15);
         expect(CM.nbPredicted).toBe(15);
+        expect(CM.getCount(1, 0)).toBe(1);
     });
 
     it('should throw when matrix and labels do not have the same length', function () {
@@ -40,6 +42,11 @@ describe('Confusion Matrix', function () {
         expect(function () {
             new ConfusionMatrix([[1, 2]], []);
         }).toThrowError(/matrix must be square/);
+    });
+
+    it('should throw if trying to get the count for unexisting label', function () {
+        const CM = new ConfusionMatrix(full.matrix, full.labels);
+        expect(() => CM.getCount('A', 'B')).toThrow(/label does not exist/);
     });
 });
 

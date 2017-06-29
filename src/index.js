@@ -93,6 +93,20 @@ class ConfusionMatrix {
         }
         return predicted;
     }
+
+    /**
+     *
+     * @param actual
+     * @param predicted
+     */
+    getCount(actual, predicted) {
+        const actualIndex = this.labels.findIndex(label => label === actual);
+        const predictedIndex = this.labels.findIndex(label => label === predicted);
+        if (actualIndex < 0 || predictedIndex < 0) {
+            throw new Error('The provided label does not exist');
+        }
+        return this.matrix[actualIndex][predictedIndex];
+    }
 }
 
 module.exports = ConfusionMatrix;
