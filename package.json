@@ -1,6 +1,6 @@
 {
   "name": "ml-confusion-matrix",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Confusion matrix for supervised classification",
   "main": "lib/index.js",
   "module": "src/index.js",
