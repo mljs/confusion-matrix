@@ -20,7 +20,7 @@ const CM1 = new ConfusionMatrix([[13, 2], [10, 5]], ['cat', 'dog']);
 // Construct the confusion matrix from the true and the predicted labels
 const trueLabels =      [0, 1, 0, 1, 1, 0];
 const predictedLabels = [1, 1, 1, 1, 0, 0];
-const CM2 = new ConfusionMatrix.fromLabels(trueLabels, predictedLabels);
+const CM2 = new ConfusionMatrix.fromLabels(trueLabels, predictedLabels); // The order of the arguments are important !!!
 
 // Compute some derivatives of the confusion matrix
 // See API documentation for the complete list
