@@ -227,7 +227,7 @@ class ConfusionMatrix {
 
     /**
      * Get the positive predictive value a.k.a. precision. Computes TP / (TP + FP)
-     * @param label
+     * @param {any} label - The label that should be considered "positive"
      * @return {number}
      */
     getPositivePredictiveValue(label) {
@@ -256,7 +256,7 @@ class ConfusionMatrix {
 
     /**
      * False positive rate a.k.a. fall-out rate.
-     * @param label
+     * @param {any} label - The label that should be considered "positive"
      * @return {number}
      */
     getFalsePositiveRate(label) {
