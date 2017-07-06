@@ -4,32 +4,38 @@
   [![build status][travis-image]][travis-url]
   [![npm download][download-image]][download-url]
 
-Confusion matrix for supervised classification.
+Confusion matrix for supervised classification. Compute metrics on your classification like accuracy, sensitivity, specificity. The list of implemented metrics were inspired from [the confusion matrix wikipedia page](https://en.wikipedia.org/wiki/Confusion_matrix). See [API documentation](https://mljs.github.io/confusion-matrix/) for the list of metrics.
 
 ## Installation
-
 `$ npm install --save ml-confusion-matrix`
 
 ## Usage
-
+### Load the library
 ```js
+// CommonJS
+const ConfusionMatrix = require('ml-confusion-matrix');
+
+// ES6 module syntax
 import ConfusionMatrix from 'ml-confusion-matrix';
-
-const CM1 = new ConfusionMatrix([[13, 2], [10, 5]], ['cat', 'dog']);
-
-// Construct the confusion matrix from the true and the predicted labels
+```
+### Instanciate from the list of true and predicted labels
+Handy if you want a confusion matrix from a cross-validation or from the test data set prediction results.
+```js
 const trueLabels =      [0, 1, 0, 1, 1, 0];
 const predictedLabels = [1, 1, 1, 1, 0, 0];
-const CM2 = new ConfusionMatrix.fromLabels(trueLabels, predictedLabels); // The order of the arguments are important !!!
 
-// Compute some derivatives of the confusion matrix
-// See API documentation for the complete list
-console.log(CM1.accuracy); // 0.6 # (13 + 5) / 30
-console.log(CM2.accuracy); // 0.5
-console.log(CM2.total);    // 6
+// The order of the arguments are important !!!
+const CM2 = new ConfusionMatrix.fromLabels(trueLabels, predictedLabels);
+console.log(CM2.getAccuracy()); // 0.5
 ```
 
-## [API Documentation](https://mljs.github.io/confusion-matrix/)
+### Instanciate from confusion matrix
+You can call the constructor directly with the confusion matrix and the labels corresponding to each rows/columns.
+
+```js
+const CM1 = new ConfusionMatrix([[13, 2], [10, 5]], ['cat', 'dog']);
+console.log(CM1.getTruePositiveCount('cat')); // 13 
+```
 
 ## License
 
