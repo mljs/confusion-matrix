@@ -3,8 +3,8 @@
  * @class ConfusionMatrix
  * @example
  * const CM = new ConfusionMatrix([[13, 2], [10, 5]], ['cat', 'dog'])
- * @param {Array<Array<number>>} matrix - The confusion matrix, a 2D Array. Rows represent the actual label and columns the
- *     predicted label.
+ * @param {Array<Array<number>>} matrix - The confusion matrix, a 2D Array. Rows represent the actual label and columns
+ *     the predicted label.
  * @param {Array<any>} labels - Labels of the confusion matrix, a 1D Array
  */
 class ConfusionMatrix {
@@ -21,12 +21,15 @@ class ConfusionMatrix {
 
 
     /**
-     * Construct confusion matrix from the predicted and actual labels (classes)
+     * Construct confusion matrix from the predicted and actual labels (classes). Be sure to provide the arguments in
+     * the correct order!
      * @param {Array<any>} actual  - The predicted labels of the classification
-     * @param {Array<any>} predicted     - The actual labels of the classification. Has to be of same length as predicted.
+     * @param {Array<any>} predicted     - The actual labels of the classification. Has to be of same length as
+     *     predicted.
      * @param {object} [options] - Additional options
-     * @param {Array<any>} [options.labels] - The list of labels that should be used. If not provided the distinct set of
-     *     labels present in predicted and actual is used. Labels are compared using the strict equality operator '==='
+     * @param {Array<any>} [options.labels] - The list of labels that should be used. If not provided the distinct set
+     *     of labels present in predicted and actual is used. Labels are compared using the strict equality operator
+     *     '==='
      * @return {ConfusionMatrix} - Confusion matrix
      */
     static fromLabels(actual, predicted, options = {}) {
@@ -64,26 +67,27 @@ class ConfusionMatrix {
 
     /**
      * Compute the general prediction accuracy
+     * @deprecated Use getAccuracy
      * @return {number} - The prediction accuracy ([0-1]
      */
     get accuracy() {
-        let correct = 0;
-        let incorrect = 0;
-        for (var i = 0; i < this.matrix.length; i++) {
-            for (var j = 0; j < this.matrix.length; j++) {
-                if (i === j) correct += this.matrix[i][j];
-                else incorrect += this.matrix[i][j];
-            }
-        }
-
-        return correct / (correct + incorrect);
+        return this.getAccuracy();
     }
 
     /**
      * Compute the number of predicted observations
-     * @return {number} - The number of predicted observations
+     * @deprecated Use getTotalCount
+     * @return {number}
      */
     get total() {
+        return this.getTotalCount();
+    }
+
+    /**
+     * Get the total number of samples
+     * @return {number}
+     */
+    getTotalCount() {
         var predicted = 0;
         for (var i = 0; i < this.matrix.length; i++) {
             for (var j = 0; j < this.matrix.length; j++) {
@@ -94,17 +98,276 @@ class ConfusionMatrix {
     }
 
     /**
+     * Get the total number of true predictions
+     * @return {number}
+     */
+    getTrueCount() {
+        var count = 0;
+        for (var i = 0; i < this.matrix.length; i++) {
+            count += this.matrix[i][i];
+        }
+        return count;
+    }
+
+    /**
+     * Get the total number of false predictions.
+     * @return {number}
+     */
+    getFalseCount() {
+        return this.getTotalCount() - this.getTrueCount();
+    }
+
+    /**
+     * Get the number of true positive predictions.
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number}
+     */
+    getTruePositiveCount(label) {
+        const index = this.getIndex(label);
+        return this.matrix[index][index];
+    }
+
+    /**
+     * Get the number of true negative predictions
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number}
+     */
+    getTrueNegativeCount(label) {
+        const index = this.getIndex(label);
+        var count = 0;
+        for (var i = 0; i < this.matrix.length; i++) {
+            for (var j = 0; j < this.matrix.length; j++) {
+                if (i !== index && j !== index) {
+                    count += this.matrix[i][j];
+                }
+            }
+        }
+        return count;
+    }
+
+    /**
+     * Get the number of false positive predictions.
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number}
+     */
+    getFalsePositiveCount(label) {
+        const index = this.getIndex(label);
+        var count = 0;
+        for (var i = 0; i < this.matrix.length; i++) {
+            if (i !== index) {
+                count += this.matrix[i][index];
+            }
+        }
+        return count;
+    }
+
+    /**
+     * Get the number of false negative predictions.
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number}
+     */
+    getFalseNegativeCount(label) {
+        const index = this.getIndex(label);
+        var count = 0;
+        for (var i = 0; i < this.matrix.length; i++) {
+            if (i !== index) {
+                count += this.matrix[index][i];
+            }
+        }
+        return count;
+    }
+
+    /**
+     * Get the number of real positive samples.
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number}
+     */
+    getPositiveCount(label) {
+        return this.getTruePositiveCount(label) + this.getFalseNegativeCount(label);
+    }
+
+    /**
+     * Get the number of real negative samples.
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number}
+     */
+    getNegativeCount(label) {
+        return this.getTrueNegativeCount(label) + this.getFalsePositiveCount(label);
+    }
+
+    /**
+     * Get the index in the confusion matrix that corresponds to the given label
+     * @param {any} label - The label to search for
+     * @throws if the label is not found
+     * @return {number}
+     */
+    getIndex(label) {
+        const index = this.labels.indexOf(label);
+        if (index === -1) throw new Error('The label does not exist');
+        return index;
+    }
+
+    /**
+     * Get the true positive rate a.k.a. sensitivity. Computes the ratio between the number of true positive predictions and the total number of positive samples.
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number} - The true positive rate [0-1]
+     */
+    getTruePositiveRate(label) {
+        return this.getTruePositiveCount(label) / this.getPositiveCount(label);
+    }
+
+    /**
+     * Get the true negative rate a.k.a. specificity. Computes the ration between the number of true negative predictions and the total number of negative samples.
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number}
+     */
+    getTrueNegativeRate(label) {
+        return this.getTrueNegativeCount(label) / this.getNegativeCount(label);
+    }
+
+    /**
+     * Get the positive predictive value a.k.a. precision. Computes TP / (TP + FP)
+     * @param label
+     * @return {number}
+     */
+    getPositivePredictiveValue(label) {
+        const TP = this.getTruePositiveCount(label);
+        return TP / (TP + this.getFalsePositiveCount(label));
+    }
+
+    /**
+     * Negative predictive value
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number}
+     */
+    getNegativePredictiveValue(label) {
+        const TN = this.getTrueNegativeCount(label);
+        return TN / (TN + this.getFalseNegativeCount(label));
+    }
+
+    /**
+     * False negative rate a.k.a. miss rate.
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number}
+     */
+    getFalseNegativeRate(label) {
+        return 1 - this.getTruePositiveRate(label);
+    }
+
+    /**
+     * False positive rate a.k.a. fall-out rate.
+     * @param label
+     * @return {number}
+     */
+    getFalsePositiveRate(label) {
+        return 1 - this.getTrueNegativeRate(label);
+    }
+
+    /**
+     * False discovery rate (FDR)
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number}
+     */
+    getFalseDiscoveryRate(label) {
+        const FP = this.getFalsePositiveCount(label);
+        return FP / (FP + this.getTruePositiveCount(label));
+    }
+
+    /**
+     * False omission rate (FOR)
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number}
+     */
+    getFalseOmissionRate(label) {
+        const FN = this.getFalseNegativeCount(label);
+        return FN / (FN + this.getTruePositiveCount(label));
+    }
+
+    /**
+     * F1 score
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number}
+     */
+    getF1Score(label) {
+        const TP = this.getTruePositiveCount(label);
+        return 2 * TP / (2 * TP + this.getFalsePositiveCount(label) + this.getFalseNegativeCount(label));
+    }
+
+    /**
+     * Matthews correlation coefficient (MCC)
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number}
+     */
+    getMatthewsCorrelationCoefficient(label) {
+        const TP = this.getTruePositiveCount(label);
+        const TN = this.getTrueNegativeCount(label);
+        const FP = this.getFalsePositiveCount(label);
+        const FN = this.getFalseNegativeCount(label);
+        return (TP * TN - FP * FN) / Math.sqrt((TP + FP) * (TP + FN) * (TN + FP) * (TN + FN));
+    }
+
+    /**
+     * Informedness
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number}
+     */
+    getInformedness(label) {
+        return this.truePositiveRate(label) + this.getTrueNegativeRate(label) - 1;
+    }
+
+    /**
+     * Markedness
+     * @param {any} label - The label that should be considered "positive"
+     * @return {number}
+     */
+    getMarkedness(label) {
+        return this.getPositivePredictiveValue(label) + this.getNegativePredictiveValue(label) - 1;
+    }
+
+    /**
+     * Get the confusion table.
+     * @param {any} label - The label that should be considered "positive"
+     * @return {Array<Array<number> >} - The 2x2 confusion table. [[TP, FN], [FP, TN]]
+     */
+    getConfusionTable(label) {
+        return [
+            [
+                this.getTruePositiveCount(label),
+                this.getFalseNegativeCount(label)
+            ],
+            [
+                this.getFalsePositiveCount(label),
+                this.getTrueNegativeCount(label)
+            ]
+        ];
+    }
+
+    /**
+     * Get total accuracy.
+     * @return {number} - The ratio between the number of true predictions and total number of classifications ([0-1])
+     */
+    getAccuracy() {
+        let correct = 0;
+        let incorrect = 0;
+        for (var i = 0; i < this.matrix.length; i++) {
+            for (var j = 0; j < this.matrix.length; j++) {
+                if (i === j) correct += this.matrix[i][j];
+                else incorrect += this.matrix[i][j];
+            }
+        }
+        return correct / (correct + incorrect);
+    }
+
+
+    /**
      * Returns the element in the confusion matrix that corresponds to the given actual and predicted labels.
      * @param {any} actual - The true label
      * @param {any} predicted - The predicted label
      * @return {number} - The element in the confusion matrix
      */
     getCount(actual, predicted) {
-        const actualIndex = this.labels.indexOf(actual);
-        const predictedIndex = this.labels.indexOf(predicted);
-        if (actualIndex < 0 || predictedIndex < 0) {
-            throw new Error('The provided label does not exist');
-        }
+        const actualIndex = this.getIndex(actual);
+        const predictedIndex = this.getIndex(predicted);
         return this.matrix[actualIndex][predictedIndex];
     }
 }

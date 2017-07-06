@@ -49,6 +49,12 @@
                       <li class='h5'><span>Instance members</span></li>
                       
                       <li><a
+                        href='#ConfusionMatrix#getTruePositiveRate'
+                        class='regular pre-open'>
+                        #getTruePositiveRate
+                      </a></li>
+                      
+                      <li><a
                         href='#ConfusionMatrix#accuracy'
                         class='regular pre-open'>
                         #accuracy
@@ -58,6 +64,144 @@
                         href='#ConfusionMatrix#total'
                         class='regular pre-open'>
                         #total
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getTotalCount'
+                        class='regular pre-open'>
+                        #getTotalCount
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getTrueCount'
+                        class='regular pre-open'>
+                        #getTrueCount
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getFalseCount'
+                        class='regular pre-open'>
+                        #getFalseCount
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getTruePositiveCount'
+                        class='regular pre-open'>
+                        #getTruePositiveCount
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getTrueNegativeCount'
+                        class='regular pre-open'>
+                        #getTrueNegativeCount
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getFalsePositiveCount'
+                        class='regular pre-open'>
+                        #getFalsePositiveCount
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getFalseNegativeCount'
+                        class='regular pre-open'>
+                        #getFalseNegativeCount
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getPositiveCount'
+                        class='regular pre-open'>
+                        #getPositiveCount
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getNegativeCount'
+                        class='regular pre-open'>
+                        #getNegativeCount
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getIndex'
+                        class='regular pre-open'>
+                        #getIndex
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getTrueNegativeRate'
+                        class='regular pre-open'>
+                        #getTrueNegativeRate
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getPositivePredictiveValue'
+                        class='regular pre-open'>
+                        #getPositivePredictiveValue
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getNegativePredictiveValue'
+                        class='regular pre-open'>
+                        #getNegativePredictiveValue
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getFalseNegativeRate'
+                        class='regular pre-open'>
+                        #getFalseNegativeRate
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getFalsePositiveRate'
+                        class='regular pre-open'>
+                        #getFalsePositiveRate
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getFalseDiscoveryRate'
+                        class='regular pre-open'>
+                        #getFalseDiscoveryRate
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getFalseOmissionRate'
+                        class='regular pre-open'>
+                        #getFalseOmissionRate
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getF1Score'
+                        class='regular pre-open'>
+                        #getF1Score
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getMatthewsCorrelationCoefficient'
+                        class='regular pre-open'>
+                        #getMatthewsCorrelationCoefficient
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getInformedness'
+                        class='regular pre-open'>
+                        #getInformedness
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getMarkedness'
+                        class='regular pre-open'>
+                        #getMarkedness
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getConfusionTable'
+                        class='regular pre-open'>
+                        #getConfusionTable
+                      </a></li>
+                      
+                      <li><a
+                        href='#ConfusionMatrix#getAccuracy'
+                        class='regular pre-open'>
+                        #getAccuracy
                       </a></li>
                       
                       <li><a
@@ -94,7 +238,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/80e44ec0d071deb6c3ac50e728881b454f127ee4/lib/index.js#L12-L112'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L12-L375'>
       <span>lib/index.js</span>
       </a>
     
@@ -122,8 +266,8 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>matrix</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>>)</code>
-	    The confusion matrix, a 2D Array. Rows represent the actual label and columns the
-predicted label.
+	    The confusion matrix, a 2D Array. Rows represent the actual label and columns
+the predicted label.
 
           </div>
           
@@ -173,14 +317,15 @@ predicted label.
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/80e44ec0d071deb6c3ac50e728881b454f127ee4/lib/index.js#L34-L65'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L37-L68'>
       <span>lib/index.js</span>
       </a>
     
   </div>
   
 
-  <p>Construct confusion matrix from the predicted and actual labels (classes)</p>
+  <p>Construct confusion matrix from the predicted and actual labels (classes). Be sure to provide the arguments in
+the correct order!</p>
 
 
   <div class='pre p1 fill-light mt0'>fromLabels(actual: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>, predicted: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>, options: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a>?): <a href="#confusionmatrix">ConfusionMatrix</a></div>
@@ -210,7 +355,8 @@ predicted label.
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>predicted</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>)</code>
-	    The actual labels of the classification. Has to be of same length as predicted.
+	    The actual labels of the classification. Has to be of same length as
+predicted.
 
           </div>
           
@@ -240,8 +386,9 @@ predicted label.
                 <tr>
                   <td class='break-word'><span class='code bold'>options.labels</span> <code class='quiet'><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;any>?</code>
                   </td>
-                  <td class='break-word'><span>The list of labels that should be used. If not provided the distinct set of
-labels present in predicted and actual is used. Labels are compared using the strict equality operator '==='
+                  <td class='break-word'><span>The list of labels that should be used. If not provided the distinct set
+of labels present in predicted and actual is used. Labels are compared using the strict equality operator
+'==='
 </span></td>
                 </tr>
               
@@ -287,6 +434,86 @@ labels present in predicted and actual is used. Labels are compared using the st
     <div class='py1 quiet mt1 prose-big'>Instance Members</div>
     <div class="clearfix">
   
+    <div class='border-bottom' id='ConfusionMatrix#getTruePositiveRate'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getTruePositiveRate(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L217-L219'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the true positive rate a.k.a. sensitivity. Computes the ratio between the number of true positive predictions and the total number of positive samples.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getTruePositiveRate(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        The true positive rate 
+[
+0-1
+]
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
     <div class='border-bottom' id='ConfusionMatrix#accuracy'>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
@@ -301,7 +528,7 @@ labels present in predicted and actual is used. Labels are compared using the st
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/80e44ec0d071deb6c3ac50e728881b454f127ee4/lib/index.js#L71-L82'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L75-L77'>
       <span>lib/index.js</span>
       </a>
     
@@ -315,7 +542,8 @@ labels present in predicted and actual is used. Labels are compared using the st
   
   
 
-  
+  <div>Deprecated: Use getAccuracy
+</div>
   
   
   
@@ -367,7 +595,7 @@ labels present in predicted and actual is used. Labels are compared using the st
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/80e44ec0d071deb6c3ac50e728881b454f127ee4/lib/index.js#L88-L96'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L84-L86'>
       <span>lib/index.js</span>
       </a>
     
@@ -378,6 +606,70 @@ labels present in predicted and actual is used. Labels are compared using the st
 
 
   <div class='pre p1 fill-light mt0'>total</div>
+  
+  
+
+  <div>Deprecated: Use getTotalCount
+</div>
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getTotalCount'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getTotalCount()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L92-L100'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the total number of samples</p>
+
+
+  <div class='pre p1 fill-light mt0'>getTotalCount(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
   
   
 
@@ -396,7 +688,1677 @@ labels present in predicted and actual is used. Labels are compared using the st
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
-        The number of predicted observations
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getTrueCount'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getTrueCount()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L106-L112'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the total number of true predictions</p>
+
+
+  <div class='pre p1 fill-light mt0'>getTrueCount(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getFalseCount'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getFalseCount()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L118-L120'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the total number of false predictions.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getFalseCount(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getTruePositiveCount'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getTruePositiveCount(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L127-L130'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the number of true positive predictions.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getTruePositiveCount(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getTrueNegativeCount'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getTrueNegativeCount(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L137-L148'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the number of true negative predictions</p>
+
+
+  <div class='pre p1 fill-light mt0'>getTrueNegativeCount(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getFalsePositiveCount'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getFalsePositiveCount(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L155-L164'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the number of false positive predictions.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getFalsePositiveCount(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getFalseNegativeCount'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getFalseNegativeCount(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L171-L180'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the number of false negative predictions.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getFalseNegativeCount(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getPositiveCount'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getPositiveCount(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L187-L189'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the number of real positive samples.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getPositiveCount(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getNegativeCount'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getNegativeCount(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L196-L198'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the number of real negative samples.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getNegativeCount(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getIndex'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getIndex(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L206-L210'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the index in the confusion matrix that corresponds to the given label</p>
+
+
+  <div class='pre p1 fill-light mt0'>getIndex(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label to search for
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Throws</div>
+    <ul>
+      
+        <li>any: if the label is not found
+</li>
+      
+    </ul>
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getTrueNegativeRate'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getTrueNegativeRate(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L226-L228'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the true negative rate a.k.a. specificity. Computes the ration between the number of true negative predictions and the total number of negative samples.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getTrueNegativeRate(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getPositivePredictiveValue'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getPositivePredictiveValue(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L235-L238'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the positive predictive value a.k.a. precision. Computes TP / (TP + FP)</p>
+
+
+  <div class='pre p1 fill-light mt0'>getPositivePredictiveValue(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getNegativePredictiveValue'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getNegativePredictiveValue(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L245-L248'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Negative predictive value</p>
+
+
+  <div class='pre p1 fill-light mt0'>getNegativePredictiveValue(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getFalseNegativeRate'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getFalseNegativeRate(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L255-L257'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>False negative rate a.k.a. miss rate.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getFalseNegativeRate(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getFalsePositiveRate'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getFalsePositiveRate(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L264-L266'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>False positive rate a.k.a. fall-out rate.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getFalsePositiveRate(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getFalseDiscoveryRate'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getFalseDiscoveryRate(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L273-L276'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>False discovery rate (FDR)</p>
+
+
+  <div class='pre p1 fill-light mt0'>getFalseDiscoveryRate(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getFalseOmissionRate'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getFalseOmissionRate(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L283-L286'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>False omission rate (FOR)</p>
+
+
+  <div class='pre p1 fill-light mt0'>getFalseOmissionRate(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getF1Score'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getF1Score(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L293-L296'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>F1 score</p>
+
+
+  <div class='pre p1 fill-light mt0'>getF1Score(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getMatthewsCorrelationCoefficient'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getMatthewsCorrelationCoefficient(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L303-L309'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Matthews correlation coefficient (MCC)</p>
+
+
+  <div class='pre p1 fill-light mt0'>getMatthewsCorrelationCoefficient(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getInformedness'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getInformedness(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L316-L318'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Informedness</p>
+
+
+  <div class='pre p1 fill-light mt0'>getInformedness(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getMarkedness'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getMarkedness(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L325-L327'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Markedness</p>
+
+
+  <div class='pre p1 fill-light mt0'>getMarkedness(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getConfusionTable'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getConfusionTable(label)</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L334-L345'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get the confusion table.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getConfusionTable(label: any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>label</span> <code class='quiet'>(any)</code>
+	    The label that should be considered "positive"
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>></code>:
+        The 2x2 confusion table. [
+[
+TP, FN
+]
+, 
+[
+FP, TN
+]
+]
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='ConfusionMatrix#getAccuracy'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getAccuracy()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L351-L361'>
+      <span>lib/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Get total accuracy.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getAccuracy(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></code>:
+        The ratio between the number of true predictions and total number of classifications (
+[
+0-1
+]
+)
 
       
     
@@ -430,7 +2392,7 @@ labels present in predicted and actual is used. Labels are compared using the st
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/80e44ec0d071deb6c3ac50e728881b454f127ee4/lib/index.js#L104-L111'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/mljs/confusion-matrix/blob/11728c3cc74c53e52d42b5fcb48df3b29b9873c4/lib/index.js#L370-L374'>
       <span>lib/index.js</span>
       </a>
     
