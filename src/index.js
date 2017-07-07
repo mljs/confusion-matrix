@@ -66,21 +66,15 @@ class ConfusionMatrix {
     }
 
     /**
-     * Compute the general prediction accuracy
-     * @deprecated Use getAccuracy
-     * @return {number} - The prediction accuracy ([0-1]
+     * Get the confusion matrix
+     * @return {Array<Array<number> >}
      */
-    get accuracy() {
-        return this.getAccuracy();
+    getMatrix() {
+        return this.matrix;
     }
 
-    /**
-     * Compute the number of predicted observations
-     * @deprecated Use getTotalCount
-     * @return {number}
-     */
-    get total() {
-        return this.getTotalCount();
+    getLabels() {
+        return this.labels;
     }
 
     /**
@@ -88,7 +82,7 @@ class ConfusionMatrix {
      * @return {number}
      */
     getTotalCount() {
-        var predicted = 0;
+        let predicted = 0;
         for (var i = 0; i < this.matrix.length; i++) {
             for (var j = 0; j < this.matrix.length; j++) {
                 predicted += this.matrix[i][j];
@@ -209,6 +203,7 @@ class ConfusionMatrix {
 
     /**
      * Get the true positive rate a.k.a. sensitivity. Computes the ratio between the number of true positive predictions and the total number of positive samples.
+     * {@link https://en.wikipedia.org/wiki/Sensitivity_and_specificity}
      * @param {any} label - The label that should be considered "positive"
      * @return {number} - The true positive rate [0-1]
      */
@@ -218,6 +213,7 @@ class ConfusionMatrix {
 
     /**
      * Get the true negative rate a.k.a. specificity. Computes the ration between the number of true negative predictions and the total number of negative samples.
+     * {@link https://en.wikipedia.org/wiki/Sensitivity_and_specificity}
      * @param {any} label - The label that should be considered "positive"
      * @return {number}
      */
@@ -227,6 +223,7 @@ class ConfusionMatrix {
 
     /**
      * Get the positive predictive value a.k.a. precision. Computes TP / (TP + FP)
+     * {@link https://en.wikipedia.org/wiki/Positive_and_negative_predictive_values}
      * @param {any} label - The label that should be considered "positive"
      * @return {number}
      */
@@ -237,6 +234,7 @@ class ConfusionMatrix {
 
     /**
      * Negative predictive value
+     * {@link https://en.wikipedia.org/wiki/Positive_and_negative_predictive_values}
      * @param {any} label - The label that should be considered "positive"
      * @return {number}
      */
@@ -247,6 +245,7 @@ class ConfusionMatrix {
 
     /**
      * False negative rate a.k.a. miss rate.
+     * {@link https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#False_positive_and_false_negative_rates}
      * @param {any} label - The label that should be considered "positive"
      * @return {number}
      */
@@ -256,6 +255,7 @@ class ConfusionMatrix {
 
     /**
      * False positive rate a.k.a. fall-out rate.
+     * {@link https://en.wikipedia.org/wiki/Type_I_and_type_II_errors#False_positive_and_false_negative_rates}
      * @param {any} label - The label that should be considered "positive"
      * @return {number}
      */
@@ -265,6 +265,7 @@ class ConfusionMatrix {
 
     /**
      * False discovery rate (FDR)
+     * {@link https://en.wikipedia.org/wiki/False_discovery_rate}
      * @param {any} label - The label that should be considered "positive"
      * @return {number}
      */
@@ -285,6 +286,7 @@ class ConfusionMatrix {
 
     /**
      * F1 score
+     * {@link https://en.wikipedia.org/wiki/F1_score}
      * @param {any} label - The label that should be considered "positive"
      * @return {number}
      */
@@ -295,6 +297,7 @@ class ConfusionMatrix {
 
     /**
      * Matthews correlation coefficient (MCC)
+     * {@link https://en.wikipedia.org/wiki/Matthews_correlation_coefficient}
      * @param {any} label - The label that should be considered "positive"
      * @return {number}
      */
@@ -308,11 +311,12 @@ class ConfusionMatrix {
 
     /**
      * Informedness
+     * {@link https://en.wikipedia.org/wiki/Youden%27s_J_statistic}
      * @param {any} label - The label that should be considered "positive"
      * @return {number}
      */
     getInformedness(label) {
-        return this.truePositiveRate(label) + this.getTrueNegativeRate(label) - 1;
+        return this.getTruePositiveRate(label) + this.getTrueNegativeRate(label) - 1;
     }
 
     /**
@@ -369,6 +373,24 @@ class ConfusionMatrix {
         const actualIndex = this.getIndex(actual);
         const predictedIndex = this.getIndex(predicted);
         return this.matrix[actualIndex][predictedIndex];
+    }
+
+    /**
+     * Compute the general prediction accuracy
+     * @deprecated Use getAccuracy
+     * @return {number} - The prediction accuracy ([0-1]
+     */
+    get accuracy() {
+        return this.getAccuracy();
+    }
+
+    /**
+     * Compute the number of predicted observations
+     * @deprecated Use getTotalCount
+     * @return {number}
+     */
+    get total() {
+        return this.getTotalCount();
     }
 }
 
