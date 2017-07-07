@@ -13,8 +13,8 @@ var full = {
 describe('Confusion Matrix', function () {
     it('trivial', function () {
         const CM = new ConfusionMatrix(diagonal.matrix, diagonal.labels);
-        expect(CM.matrix).toBe(diagonal.matrix);
-        expect(CM.labels).toBe(diagonal.labels);
+        expect(CM.getMatrix()).toBe(diagonal.matrix);
+        expect(CM.getLabels()).toBe(diagonal.labels);
     });
 
 
