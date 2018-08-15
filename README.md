@@ -25,7 +25,7 @@ const trueLabels =      [0, 1, 0, 1, 1, 0];
 const predictedLabels = [1, 1, 1, 1, 0, 0];
 
 // The order of the arguments are important !!!
-const CM2 = new ConfusionMatrix.fromLabels(trueLabels, predictedLabels);
+const CM2 = ConfusionMatrix.fromLabels(trueLabels, predictedLabels);
 console.log(CM2.getAccuracy()); // 0.5
 ```
 
