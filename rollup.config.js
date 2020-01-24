@@ -1,5 +1,9 @@
-export default {
-    entry: 'src/index.js',
+const config = {
+  input: 'src/index.js',
+  output: {
     format: 'cjs',
-    dest: 'lib/index.js'
+    file: 'lib/index.js',
+  },
 };
+
+export default config;
