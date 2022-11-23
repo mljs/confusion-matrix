@@ -1,7 +1,7 @@
 # confusion-matrix
 
 [![NPM version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
+[![build status][ci-image]][ci-url]
 [![npm download][download-image]][download-url]
 
 Confusion matrix for supervised classification. Compute metrics on your classification like accuracy, sensitivity, specificity. The list of implemented metrics were inspired from [the confusion matrix wikipedia page](https://en.wikipedia.org/wiki/Confusion_matrix). See [API documentation](https://mljs.github.io/confusion-matrix/) for the list of metrics.
