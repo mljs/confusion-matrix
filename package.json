@@ -13,9 +13,11 @@
     "eslint": "eslint src",
     "eslint-fix": "npm run eslint -- --fix",
     "prepublish": "rollup -c",
-    "test": "run-s testonly eslint",
-    "test-travis": "eslint src && jest --coverage && codecov",
-    "testonly": "jest"
+    "prettier": "prettier --check src",
+    "prettier-write": "prettier --write src",
+    "test": "npm run test-coverage && npm run eslint && npm run prettier && npm run check-types",
+    "test-coverage": "jest --coverage",
+    "test-only": "jest"
   },
   "repository": {
     "type": "git",
