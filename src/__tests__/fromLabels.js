@@ -1,7 +1,7 @@
 import ConfusionMatrix from '..';
 
-describe('fromLabels', function() {
-  it('identity', function() {
+describe('fromLabels', () => {
+  it('identity', () => {
     const CM = ConfusionMatrix.fromLabels(['A', 'B', 'C'], ['A', 'B', 'C']);
     expect(CM.getLabels()).toStrictEqual(['A', 'B', 'C']);
     expect(CM.getMatrix()).toStrictEqual([
@@ -11,7 +11,7 @@ describe('fromLabels', function() {
     ]);
   });
 
-  it('actual classes are in rows, predicted in columns', function() {
+  it('actual classes are in rows, predicted in columns', () => {
     const CM = ConfusionMatrix.fromLabels(['A', 'B'], ['B', 'C']);
     expect(CM.getLabels()).toStrictEqual(['A', 'B', 'C']);
     expect(CM.getMatrix()).toStrictEqual([
@@ -21,7 +21,7 @@ describe('fromLabels', function() {
     ]);
   });
 
-  it('when classes are given, ignore other classes', function() {
+  it('when classes are given, ignore other classes', () => {
     const CM = ConfusionMatrix.fromLabels(['A', 'B', 'B'], ['A', 'A', 'C'], {
       labels: ['A', 'B', 'D'],
     });
@@ -33,9 +33,9 @@ describe('fromLabels', function() {
     ]);
   });
 
-  it('should sort labels alphabetically', function() {
+  it('should sort labels alphabetically', () => {
     const CM = ConfusionMatrix.fromLabels([1, 3, 2], [1, 1, 1], {
-      sort: function(a, b) {
+      sort: (a, b) => {
         return a - b;
       },
     });
@@ -47,7 +47,7 @@ describe('fromLabels', function() {
     ]);
   });
 
-  it('should throw if actual and predicted are not of same length', function() {
+  it('should throw if actual and predicted are not of same length', () => {
     expect(() => {
       ConfusionMatrix.fromLabels([1, 2], [1, 2, 3]);
     }).toThrow(/must have the same length/);

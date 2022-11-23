@@ -31,6 +31,7 @@ export default class ConfusionMatrix {
    * @param {Array<any>} [options.labels] - The list of labels that should be used. If not provided the distinct set
    *     of labels present in predicted and actual is used. Labels are compared using the strict equality operator
    *     '==='
+   * @param {any} [options.sort]
    * @return {ConfusionMatrix} - Confusion matrix
    */
   static fromLabels(actual, predicted, options = {}) {
