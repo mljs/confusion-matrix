@@ -1,6 +1,6 @@
 {
   "name": "ml-confusion-matrix",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Confusion matrix for supervised classification",
   "main": "lib/index.js",
   "module": "./lib-esm/index.js",
