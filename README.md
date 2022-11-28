@@ -56,7 +56,7 @@ console.log(CM1.getTruePositiveCount('cat')); // 13
 
 [npm-image]: https://img.shields.io/npm/v/ml-confusion-matrix.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/ml-confusion-matrix
-[ci-image]: https://github.com/mljs/confusion-matrix/workflows/Node.js%20CI/badge.svg?branch=master
+[ci-image]: https://github.com/mljs/confusion-matrix/workflows/Node.js%20CI/badge.svg?branch=main
 [ci-url]: https://github.com/mljs/confusion-matrix/actions?query=workflow%3A%22Node.js+CI%22
 [download-image]: https://img.shields.io/npm/dm/ml-confusion-matrix.svg?style=flat-square
 [download-url]: https://npmjs.org/package/ml-confusion-matrix
