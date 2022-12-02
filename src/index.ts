@@ -8,7 +8,9 @@
  * @param {Array<any>} labels - Labels of the confusion matrix, a 1D Array
  */
 export default class ConfusionMatrix {
-  constructor(matrix, labels) {
+  private labels;
+  private matrix;
+  constructor(matrix: number[][], labels: any[]) {
     if (matrix.length !== matrix[0].length) {
       throw new Error('Confusion matrix must be square');
     }
@@ -34,7 +36,11 @@ export default class ConfusionMatrix {
    * @param {any} [options.sort]
    * @return {ConfusionMatrix} - Confusion matrix
    */
-  static fromLabels(actual, predicted, options = {}) {
+  static fromLabels(
+    actual: any[],
+    predicted: any[],
+    options: FromLabelsOptions = {},
+  ) {
     if (predicted.length !== actual.length) {
       throw new Error('predicted and actual must have the same length');
     }
@@ -50,7 +56,7 @@ export default class ConfusionMatrix {
     }
 
     // Create confusion matrix and fill with 0's
-    const matrix = Array.from({ length: distinctLabels.length });
+    const matrix: number[][] = Array.from({ length: distinctLabels.length });
     for (let i = 0; i < matrix.length; i++) {
       matrix[i] = new Array(matrix.length);
       matrix[i].fill(0);
@@ -85,9 +91,9 @@ export default class ConfusionMatrix {
    */
   getTotalCount() {
     let predicted = 0;
-    for (let i = 0; i < this.matrix.length; i++) {
-      for (let j = 0; j < this.matrix.length; j++) {
-        predicted += this.matrix[i][j];
+    for (const row of this.matrix) {
+      for (const element of row) {
+        predicted += element;
       }
     }
     return predicted;
@@ -118,7 +124,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getTruePositiveCount(label) {
+  getTruePositiveCount(label: any): number {
     const index = this.getIndex(label);
     return this.matrix[index][index];
   }
@@ -128,7 +134,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getTrueNegativeCount(label) {
+  getTrueNegativeCount(label: any) {
     const index = this.getIndex(label);
     let count = 0;
     for (let i = 0; i < this.matrix.length; i++) {
@@ -146,7 +152,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getFalsePositiveCount(label) {
+  getFalsePositiveCount(label: any) {
     const index = this.getIndex(label);
     let count = 0;
     for (let i = 0; i < this.matrix.length; i++) {
@@ -162,7 +168,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getFalseNegativeCount(label) {
+  getFalseNegativeCount(label: any): number {
     const index = this.getIndex(label);
     let count = 0;
     for (let i = 0; i < this.matrix.length; i++) {
@@ -178,7 +184,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getPositiveCount(label) {
+  getPositiveCount(label: any) {
     return this.getTruePositiveCount(label) + this.getFalseNegativeCount(label);
   }
 
@@ -187,7 +193,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getNegativeCount(label) {
+  getNegativeCount(label: any) {
     return this.getTrueNegativeCount(label) + this.getFalsePositiveCount(label);
   }
 
@@ -197,7 +203,7 @@ export default class ConfusionMatrix {
    * @throws if the label is not found
    * @return {number}
    */
-  getIndex(label) {
+  getIndex(label: any) {
     const index = this.labels.indexOf(label);
     if (index === -1) throw new Error('The label does not exist');
     return index;
@@ -209,7 +215,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number} - The true positive rate [0-1]
    */
-  getTruePositiveRate(label) {
+  getTruePositiveRate(label: any) {
     return this.getTruePositiveCount(label) / this.getPositiveCount(label);
   }
 
@@ -219,7 +225,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getTrueNegativeRate(label) {
+  getTrueNegativeRate(label: any) {
     return this.getTrueNegativeCount(label) / this.getNegativeCount(label);
   }
 
@@ -229,7 +235,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getPositivePredictiveValue(label) {
+  getPositivePredictiveValue(label: any) {
     const TP = this.getTruePositiveCount(label);
     return TP / (TP + this.getFalsePositiveCount(label));
   }
@@ -240,7 +246,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getNegativePredictiveValue(label) {
+  getNegativePredictiveValue(label: any) {
     const TN = this.getTrueNegativeCount(label);
     return TN / (TN + this.getFalseNegativeCount(label));
   }
@@ -251,7 +257,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getFalseNegativeRate(label) {
+  getFalseNegativeRate(label: any) {
     return 1 - this.getTruePositiveRate(label);
   }
 
@@ -261,7 +267,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getFalsePositiveRate(label) {
+  getFalsePositiveRate(label: any) {
     return 1 - this.getTrueNegativeRate(label);
   }
 
@@ -271,7 +277,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getFalseDiscoveryRate(label) {
+  getFalseDiscoveryRate(label: any) {
     const FP = this.getFalsePositiveCount(label);
     return FP / (FP + this.getTruePositiveCount(label));
   }
@@ -281,7 +287,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getFalseOmissionRate(label) {
+  getFalseOmissionRate(label: any) {
     const FN = this.getFalseNegativeCount(label);
     return FN / (FN + this.getTruePositiveCount(label));
   }
@@ -292,7 +298,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getF1Score(label) {
+  getF1Score(label: any) {
     const TP = this.getTruePositiveCount(label);
     return (
       (2 * TP) /
@@ -308,7 +314,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getMatthewsCorrelationCoefficient(label) {
+  getMatthewsCorrelationCoefficient(label: any) {
     const TP = this.getTruePositiveCount(label);
     const TN = this.getTrueNegativeCount(label);
     const FP = this.getFalsePositiveCount(label);
@@ -325,7 +331,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getInformedness(label) {
+  getInformedness(label: any) {
     return (
       this.getTruePositiveRate(label) + this.getTrueNegativeRate(label) - 1
     );
@@ -336,7 +342,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {number}
    */
-  getMarkedness(label) {
+  getMarkedness(label: any) {
     return (
       this.getPositivePredictiveValue(label) +
       this.getNegativePredictiveValue(label) -
@@ -349,7 +355,7 @@ export default class ConfusionMatrix {
    * @param {any} label - The label that should be considered "positive"
    * @return {Array<Array<number> >} - The 2x2 confusion table. [[TP, FN], [FP, TN]]
    */
-  getConfusionTable(label) {
+  getConfusionTable(label: any) {
     return [
       [this.getTruePositiveCount(label), this.getFalseNegativeCount(label)],
       [this.getFalsePositiveCount(label), this.getTrueNegativeCount(label)],
@@ -378,7 +384,7 @@ export default class ConfusionMatrix {
    * @param {any} predicted - The predicted label
    * @return {number} - The element in the confusion matrix
    */
-  getCount(actual, predicted) {
+  getCount(actual: any, predicted: any) {
     const actualIndex = this.getIndex(actual);
     const predictedIndex = this.getIndex(predicted);
     return this.matrix[actualIndex][predictedIndex];
@@ -401,4 +407,9 @@ export default class ConfusionMatrix {
   get total() {
     return this.getTotalCount();
   }
+}
+
+interface FromLabelsOptions {
+  labels?: any[];
+  sort?: (...args: any[]) => number;
 }
