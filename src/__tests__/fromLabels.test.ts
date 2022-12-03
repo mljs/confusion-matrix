@@ -36,7 +36,7 @@ describe('fromLabels', () => {
   it('should sort labels alphabetically', () => {
     const CM = ConfusionMatrix.fromLabels([1, 3, 2], [1, 1, 1], {
       sort: (a, b) => {
-        return a - b;
+        return (a as number) - (b as number);
       },
     });
     expect(CM.getLabels()).toStrictEqual([1, 2, 3]);
