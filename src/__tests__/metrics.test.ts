@@ -1,4 +1,4 @@
-import ConfusionMatrix from '..';
+import { ConfusionMatrix } from '..';
 
 // Tests are based on wikipedia page
 // https://en.wikipedia.org/wiki/Confusion_matrix

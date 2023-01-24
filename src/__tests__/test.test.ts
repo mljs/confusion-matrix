@@ -1,4 +1,4 @@
-import ConfusionMatrix from '..';
+import { ConfusionMatrix } from '..';
 
 let diagonal = {
   matrix: [

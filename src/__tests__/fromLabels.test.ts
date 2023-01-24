@@ -1,4 +1,4 @@
-import ConfusionMatrix from '..';
+import { ConfusionMatrix } from '..';
 
 describe('fromLabels', () => {
   it('identity', () => {

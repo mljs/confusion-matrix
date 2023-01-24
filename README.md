@@ -16,10 +16,10 @@ Confusion matrix for supervised classification. Compute metrics on your classifi
 
 ```js
 // CommonJS
-const ConfusionMatrix = require('ml-confusion-matrix');
+const { ConfusionMatrix } = require('ml-confusion-matrix');
 
 // ES6 module syntax
-import ConfusionMatrix from 'ml-confusion-matrix';
+import { ConfusionMatrix } from 'ml-confusion-matrix';
 ```
 
 ### Instanciate from the list of true and predicted labels
