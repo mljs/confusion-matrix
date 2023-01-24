@@ -52,6 +52,6 @@ describe('Confusion Matrix', () => {
 
   it('should throw if trying to get the count for unexisting label', () => {
     const CM = new ConfusionMatrix(full.matrix, full.labels);
-    expect(() => CM.getCount('A', 'B')).toThrow(/label does not exist/);
+    expect(() => CM.getCount(4, 5)).toThrow(/label does not exist/);
   });
 });
