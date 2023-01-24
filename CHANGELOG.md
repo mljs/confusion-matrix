@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/mljs/confusion-matrix/compare/v1.0.0...v2.0.0) (2023-01-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* replace the default export by a named export
+
+### Features
+
+* use a generatic for the label's type ([8e66373](https://github.com/mljs/confusion-matrix/commit/8e66373ed4d13598177d0cf595ece450b7ec066c))
+
+
+### Miscellaneous Chores
+
+* do not use default exports ([6bd4669](https://github.com/mljs/confusion-matrix/commit/6bd46693dd2297642526fa623aa7b23cf3addc13))
+
 ## [1.0.0](https://github.com/mljs/confusion-matrix/compare/v0.4.1...v1.0.0) (2022-12-12)
 
 
