@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/mljs/confusion-matrix/compare/v2.0.0...v2.0.1) (2023-01-24)
+
+
+### Bug Fixes
+
+* add typedoc action ([#15](https://github.com/mljs/confusion-matrix/issues/15)) ([8432741](https://github.com/mljs/confusion-matrix/commit/84327418fc3a6d3fb911c2cde7a4db3f989b3b96))
+
 ## [2.0.0](https://github.com/mljs/confusion-matrix/compare/v1.0.0...v2.0.0) (2023-01-24)
 
 
