@@ -6,7 +6,7 @@
  * @param matrix - The confusion matrix, a 2D Array. Rows represent the actual label and columns the predicted label.
  * @param labels - Labels of the confusion matrix, a 1D Array
  */
-export default class ConfusionMatrix {
+export class ConfusionMatrix {
   private labels: Label[];
   private matrix: number[][];
   constructor(matrix: number[][], labels: Label[]) {
